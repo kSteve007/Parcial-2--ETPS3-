@@ -25,17 +25,6 @@ class _GroceriesState extends State<Groceries> {
     return AppBar(
       backgroundColor: bgColor,
       centerTitle: true,
-      title: Container(
-          width: 155,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: white.withOpacity(0.05)),
-          child: Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-          )),
     );
   }
 
@@ -79,7 +68,28 @@ class _GroceriesState extends State<Groceries> {
               Row(
                 children: [
                   Column(
-                    children: [getGroceries()],
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Ctg 1: Frutas y Verduras",
+                          style: TextStyle(fontSize: 25, color: white),
+                        ),
+                      ),
+                      getGroceries1(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Ctg 2: Carnes Variadas",
+                          style: TextStyle(fontSize: 25, color: white),
+                        ),
+                      ),
+                      getGroceries2()
+                    ],
                   ),
                 ],
               )
@@ -90,10 +100,10 @@ class _GroceriesState extends State<Groceries> {
     );
   }
 
-  Widget getGroceries() {
+  Widget getGroceries1() {
     var tamanio = MediaQuery.of(context).size;
     return Column(
-      children: List.generate(groceries_data.length, (index) {
+      children: List.generate(groceries_category1_data.length, (index) {
         return Padding(
           padding: const EdgeInsets.only(left: 5, right: 5, top: 15),
           child: FadeInDown(
@@ -114,7 +124,7 @@ class _GroceriesState extends State<Groceries> {
                                   BorderRadius.all(Radius.circular(15)),
                               image: DecorationImage(
                                   image: NetworkImage(
-                                      groceries_data[index]['img']),
+                                      groceries_category1_data[index]['img']),
                                   fit: BoxFit.cover)),
                         ),
                         SizedBox(
@@ -127,7 +137,7 @@ class _GroceriesState extends State<Groceries> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                groceries_data[index]['name'],
+                                groceries_category1_data[index]['name'],
                                 style: TextStyle(
                                     fontSize: 20,
                                     color: white,
@@ -142,7 +152,90 @@ class _GroceriesState extends State<Groceries> {
                                     width: 3,
                                   ),
                                   Text(
-                                    groceries_data[index]['descripcion'],
+                                    groceries_category1_data[index]
+                                        ['descripcion'],
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        color: white.withOpacity(0.5),
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ]),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 55),
+                  child: Divider(
+                    color: white.withOpacity(0.3),
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      }),
+    );
+  }
+
+  Widget getGroceries2() {
+    var tamanio = MediaQuery.of(context).size;
+    return Column(
+      children: List.generate(groceries_category2_data.length, (index) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 5, right: 5, top: 15),
+          child: FadeInDown(
+            duration: Duration(milliseconds: 100 * index),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      // width: (tamanio.width - 30) * 0.4,
+                      child: Row(children: [
+                        Container(
+                          width: 120,
+                          height: 120,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15)),
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      groceries_category2_data[index]['img']),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          // width: (tamanio.width - 100) * 0.4,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                groceries_category2_data[index]['name'],
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: white,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  Text(
+                                    groceries_category2_data[index]
+                                        ['descripcion'],
                                     style: TextStyle(
                                         fontSize: 16,
                                         color: white.withOpacity(0.5),

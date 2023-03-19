@@ -12,24 +12,24 @@ const List recipes_data = [
     "img":
         "https://images.pexels.com/photos/1833349/pexels-photo-1833349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "name": "Camarones",
-    "descripcion": "Steamed Food With Leafs, nice",
+    "descripcion": "Steamed Food With Leafs, salty.",
   },
   {
     "img":
         "https://images.pexels.com/photos/958546/pexels-photo-958546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "name": "Fried Dish",
-    "descripcion": "Assorted Fried Dish, lunch--.",
+    "descripcion": "Assorted Fried Dish, only at noon",
   },
   {
     "img":
         "https://images.pexels.com/photos/2878738/pexels-photo-2878738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "name": "Carne",
-    "descripcion": "Carnita Asada bien buena,.. ",
+    "name": "Carne Asada",
+    "descripcion": "roast beef, seasoned at the time",
   },
   {
     "img":
         "https://images.pexels.com/photos/1339057/pexels-photo-1339057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "name": "Carne Vegetal",
-    "descripcion": "*- Meat With Vegetable.--",
+    "descripcion": "Meat With Vegetable.to choice",
   },
 ];
